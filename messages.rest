@@ -1,0 +1,10 @@
+
+# Publish to songs topic
+POST http://localhost:3500/v1.0/publish/songs
+Content-Type: application/json
+
+{
+    "id": 1,
+    "artist": "Led Zeppelin",
+    "name": "Kashmir"
+}

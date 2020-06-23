@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/csharp/bin/Debug/netcoreapp3.1/songs-app.dll",
+            "program": "${workspaceFolder}/csharp/bin/Debug/netcoreapp3.1/SongRequests.dll",
             "args": [],
             "cwd": "${workspaceFolder}/csharp",
             "stopAtEntry": false,
