@@ -20,15 +20,16 @@ func init() {
 
 func main() {
 
+	// Return a collection of topic subscriptions
 	http.HandleFunc("/dapr/subscribe", func(w http.ResponseWriter, r *http.Request) {
-		j, _ := json.Marshal([]struct {
+		json, _ := json.Marshal([]struct {
 			Topic string `json:"topic"`
 			Route string `json:"route"`
 		}{{
 			topic, route}})
 
 		w.Header().Set("Content-Type", "application/json")
-		w.Write(j)
+		w.Write(json)
 	})
 
 	http.HandleFunc("/"+route, func(w http.ResponseWriter, r *http.Request) {
@@ -47,7 +48,6 @@ func main() {
 			Data    SongRequest `json:"data"`
 		}
 
-		//event := &cloudevent{}
 		event := &CloudEvent{}
 		var requestBody []byte
 		requestBody, _ = ioutil.ReadAll((r.Body))
