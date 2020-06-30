@@ -9,14 +9,14 @@ app.get('/dapr/subscribe', (req, res) => {
     res.json([
         {
             topic: "songs",
-            route: "archive"
+            route: "playlist"
         }
     ]);
 })
 
-app.post('/archive', (req, res) => {
+app.post('/playlist', (req, res) => {
     let song = req.body.data;
-    console.log(song.name);
+    console.log("New song request: " + song.artist + " - " + song.name);
     res.sendStatus(200);
 });
 

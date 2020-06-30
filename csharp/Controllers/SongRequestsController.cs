@@ -25,18 +25,17 @@ namespace SongRequests.Controllers
         {
             // Initialize an array of topic subscriptions. Each subscription
             // contains the name of the topic and the route.
-            var topics = new [] {new { topic = "songs", route = "/request"}};
-                        
-            return new OkObjectResult(topics);
+            var topics = new [] {new { topic = "songs", route = "playlist"}};
+                                
+            return new OkObjectResult(topics);       
         }
 
-        [HttpPost("/request")]
+        [HttpPost("/playlist")]
         public async Task<IActionResult> NewSong(CloudEvent cloudEvent)
         {
             // The message is wrapped in a cloud event envelope. Which means that 
             // the domain-specific information (the song) is in the Data object.
             var song = JsonConvert.DeserializeObject<Song>(cloudEvent.Data.ToString());
-
             _logger.LogInformation($"New song request: {song.Artist} - {song.Name}");
 
             return new OkResult();
