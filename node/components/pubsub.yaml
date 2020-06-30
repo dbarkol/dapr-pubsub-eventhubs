@@ -1,13 +1,17 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: pubsub
+  name: messagebus
 spec:
-  type: pubsub.redis
+  type: pubsub.azure.eventhubs
   metadata:
-  - name: redisHost
-    value: localhost:6379
-  - name: redisPassword
-    value: ""
+    - name: connectionString
+      value: Endpoint=sb://<namespace-name>.servicebus.windows.net/;SharedAccessKeyName=authorizationpolicy;SharedAccessKey=<key>;EntityPath=songs
+    - name: storageAccountName
+      value: <storage-account-name>
+    - name: storageAccountKey
+      value: <storage-account-key>
+    - name: storageContainerName
+      value: songs
 
 
