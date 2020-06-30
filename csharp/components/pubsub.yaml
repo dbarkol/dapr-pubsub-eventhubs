@@ -12,6 +12,6 @@ spec:
     - name: storageAccountKey
       value: <storage-account-key>
     - name: storageContainerName
-      value: songs
+      value: songs-csharp-subscriber
 
 
