@@ -41,11 +41,13 @@ func main() {
 		}
 
 		type CloudEvent struct {
-			ID      string      `json:"id"`
-			Subject string      `json:"subject"`
-			Source  string      `json:"source"`
-			Type    string      `json:"type"`
-			Data    SongRequest `json:"data"`
+			ID              string      `json:"id"`
+			Subject         string      `json:"subject"`
+			Source          string      `json:"source"`
+			Type            string      `json:"type"`
+			SpecVersion     string      `json:"specversion"`
+			DataContentType string      `json:"datacontentytype"`
+			Data            SongRequest `json:"data"`
 		}
 
 		event := &CloudEvent{}
