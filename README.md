@@ -4,6 +4,8 @@ This solution demonstrates how to consume messages from a message broker with th
 
 The accompanying blog post goes through the configuration steps and considerations when choosing [Azure Event Hubs](https://aka.ms/azureeventhubs) as the message broker. However, the code for consuming the messages does not change if a different message broker is selected, only the component YAML file.
 
+Blog post: [https://madeofstrings.com/2020/07/05/pub-sub-with-dapr-and-azure-event-hubs/](https://madeofstrings.com/2020/07/05/pub-sub-with-dapr-and-azure-event-hubs/)
+
 At a high-level, the physical architecture for this solution looks like:
 
 ![Physical architecture](/images/dapr-eventhubs-physical-architecture.png)
