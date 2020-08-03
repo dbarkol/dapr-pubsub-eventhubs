@@ -88,7 +88,7 @@ spec:
   type: pubsub.azure.eventhubs
   metadata:
     - name: connectionString
-      value: Endpoint=sb://<namespace-name>.servicebus.windows.net/;SharedAccessKeyName=authorizationpolicy;SharedAccessKey=<key>;EntityPath=songs
+      value: Endpoint=sb://<namespace-name>.servicebus.windows.net/;SharedAccessKeyName=<policy-name>;SharedAccessKey=<key>;EntityPath=<event-hub-name>
     - name: storageAccountName
       value: <storage-account-name>
     - name: storageAccountKey
