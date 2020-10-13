@@ -9,11 +9,13 @@ import (
 )
 
 var port string
+var pubsubName string
 var topic string
 var route string
 
 func init() {
 	port = "8080"
+	pubsubName = "messagebus-go"
 	topic = "songs"
 	route = "playlist"
 }
@@ -23,10 +25,11 @@ func main() {
 	// Return a collection of topic subscriptions
 	http.HandleFunc("/dapr/subscribe", func(w http.ResponseWriter, r *http.Request) {
 		json, _ := json.Marshal([]struct {
-			Topic string `json:"topic"`
-			Route string `json:"route"`
+			PubSubName string `json:"pubsubname"`
+			Topic      string `json:"topic"`
+			Route      string `json:"route"`
 		}{{
-			topic, route}})
+			pubsubName, topic, route}})
 
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(json)

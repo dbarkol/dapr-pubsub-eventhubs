@@ -25,7 +25,7 @@ namespace SongRequests.Controllers
         {
             // Initialize an array of topic subscriptions. Each subscription
             // contains the name of the topic and the route.
-            var topics = new [] {new { topic = "songs", route = "playlist"}};
+            var topics = new [] {new { pubsubname="messagebus-csharp", topic = "songs", route = "playlist"}};
                                 
             return new OkObjectResult(topics);       
         }

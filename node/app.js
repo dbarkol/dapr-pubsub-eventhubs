@@ -8,6 +8,7 @@ const port = 3000
 app.get('/dapr/subscribe', (req, res) => {
     res.json([
         {
+            pubsubname: "messagebus-node",
             topic: "songs",
             route: "playlist"
         }
