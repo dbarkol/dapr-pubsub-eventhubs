@@ -1,7 +1,7 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: messagebus
+  name: messagebus-go
 spec:
   type: pubsub.azure.eventhubs
   metadata:
@@ -13,5 +13,4 @@ spec:
       value: <storage-account-key>
     - name: storageContainerName
       value: songs-go-subscriber
-
-
+      
