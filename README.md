@@ -77,13 +77,18 @@ az storage account create --name $storageaccount --location $location --resource
 
 ## Event Hubs pub-sub component
 
-A different component must be used for each topic subscription. In addition, the storage container name must match the name of consumer group for the subscription. For example, the storage account name for the Node.js application should be `node-subscriber-app`.
+Important component details:
+
+- A different component must be used for each topic subscription.
+- The storage container name must match the name of consumer group for the subscription. For example, the storage account name for the Node.js application should be `node-subscriber-app`.
+
+Here is an example of the component configuration for the Node application:
 
 ``` YAML
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: messagebus
+  name: messagebus-node
 spec:
   type: pubsub.azure.eventhubs
   metadata:
@@ -94,5 +99,5 @@ spec:
     - name: storageAccountKey
       value: <storage-account-key>
     - name: storageContainerName
-      value: <unique-container-name-per-subscriber>
+      value: node-subscriber-app
 ```
