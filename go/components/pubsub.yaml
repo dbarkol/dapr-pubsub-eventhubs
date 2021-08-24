@@ -4,6 +4,7 @@ metadata:
   name: messagebus-go
 spec:
   type: pubsub.azure.eventhubs
+  version: v1
   metadata:
     - name: connectionString
       value: Endpoint=sb://<namespace-name>.servicebus.windows.net/;SharedAccessKeyName=authorizationpolicy;SharedAccessKey=<key>;EntityPath=songs

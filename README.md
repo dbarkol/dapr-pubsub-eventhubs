@@ -91,6 +91,7 @@ metadata:
   name: messagebus-node
 spec:
   type: pubsub.azure.eventhubs
+  version: v1
   metadata:
     - name: connectionString
       value: Endpoint=sb://<namespace-name>.servicebus.windows.net/;SharedAccessKeyName=<policy-name>;SharedAccessKey=<key>;EntityPath=<event-hub-name>
